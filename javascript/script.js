@@ -1,3 +1,30 @@
+// Login 
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//code.jquery.com/jquery-1.11.3.min.js';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+$(function() {
+
+    $('#login-form-link').click(function(e) {
+    $("#login-form").delay(100).fadeIn(100);
+    $("#register-form").fadeOut(100);
+    $('#register-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+  $('#register-form-link').click(function(e) {
+    $("#register-form").delay(100).fadeIn(100);
+    $("#login-form").fadeOut(100);
+    $('#login-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
+});
+
+// Login 
+
 /* google maps */
 google.maps.visualRefresh = true;
 
@@ -42,4 +69,32 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 /* end google maps */
 
+
+
+// Login 
+var script = document.createElement('script');
+script.src = '//code.jquery.com/jquery-1.11.3.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+$(function() {
+
+    $('#login-form-link').click(function(e) {
+    $("#login-form").delay(100).fadeIn(100);
+    $("#register-form").fadeOut(100);
+    $('#register-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+  $('#register-form-link').click(function(e) {
+    $("#register-form").delay(100).fadeIn(100);
+    $("#login-form").fadeOut(100);
+    $('#login-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
+});
+
+// Login 
 
