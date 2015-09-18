@@ -27,7 +27,7 @@
 	//check that the username is not already taken
 	function checkunusedusername($user)
 	{
-		$usernameSearch = "SELECT * from counselors_login WHERE username LIKE '".$user."'";
+		$usernameSearch = "SELECT * from registered_users WHERE username LIKE '".$user."'";
 
 		$usernameResultSearch =@mysqli_query($conn, $usernameSearch);
 
@@ -45,7 +45,7 @@
 	//check that the email has not already been used
 	function checkunusedemail($em)
 	{
-		$emailSearch = "SELECT * from counselors_login WHERE email LIKE '".$em."'";
+		$emailSearch = "SELECT * from registered_users WHERE email LIKE '".$em."'";
 
 		$emailResultSearch =@mysqli_query($conn, $emailSearch);
 
@@ -61,7 +61,7 @@
 		}
 	}
 
-	$insertUserToDatabase = "INSERT INTO counselors_login (username, email, password) VALUES ('".$username."', '".$email."', '".$password."')";
+	$insertUserToDatabase = "INSERT INTO registered_users (username, email, password) VALUES ('".$username."', '".$email."', '".$password."')";
 	if(
 		(checkunusedemail($username) == TRUE) &&
 		(checkunusedusername($email) == TRUE) &&
@@ -71,7 +71,6 @@
 		mysqli_query($conn, $insertUserToDatabase);
 		setcookie("PHPSESSION", $username, 0, "/");
 	}
-
 
 	mysqli_close($conn);
 	header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/c_profile.html");
