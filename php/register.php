@@ -1,21 +1,13 @@
 <?php
 	
+	$conn = NULL;
 	$username = $_POST["username"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
 	$c_password = $_POST["confirm-password"];
-
-	//establish connection to database
-	require_once ("settings.php");
-							
-	$conn =@mysqli_connect($host, $user, $pass, $dbnm);
+						
+	$conn = mysqli_connect("localhost", "root", "", "thinkfeelact");
 	
-	if ($conn->connect_error) {
-		die("The database is unavailable at the moment." . $conn->connect_error);
-	}
-
-	mysqli_select_db($conn, $dbnm);
-	//check that the passwords upon registration match
 	function checkpasswordmatches($pass, $c_pass)
 	{
 		if($pass == $c_pass)
@@ -27,11 +19,13 @@
 	//check that the username is not already taken
 	function checkunusedusername($user)
 	{
+		$conn = mysqli_connect("localhost", "root", "", "thinkfeelact");
+
 		$usernameSearch = "SELECT * from registered_users WHERE username LIKE '".$user."'";
 
-		$usernameResultSearch =@mysqli_query($conn, $usernameSearch);
+		$usernameResultSearch = mysqli_query($conn, $usernameSearch);
 
-		$numRows =@mysqli_num_rows($usernameResultSearch);
+		$numRows = mysqli_num_rows($usernameResultSearch);
 		
 		if($numRows > 0)
 		{	
@@ -45,34 +39,38 @@
 	//check that the email has not already been used
 	function checkunusedemail($em)
 	{
+		$conn = mysqli_connect("localhost", "root", "", "thinkfeelact");
+
 		$emailSearch = "SELECT * from registered_users WHERE email LIKE '".$em."'";
 
-		$emailResultSearch =@mysqli_query($conn, $emailSearch);
+		$emailResultSearch = mysqli_query($conn, $emailSearch);
 
-		$numRows =@mysqli_num_rows($emailResultSearch);
-
+		$numRows = mysqli_num_rows($emailResultSearch);
+		
 		if($numRows > 0)
-		{
-
+		{	
 			return FALSE;
 		} else {
 
 			return TRUE;
 		}
+		
 	}
 
 	$insertUserToDatabase = "INSERT INTO registered_users (username, email, password) VALUES ('".$username."', '".$email."', '".$password."')";
 	if(
-		(checkunusedemail($username) == TRUE) &&
-		(checkunusedusername($email) == TRUE) &&
+		(checkunusedemail($email) == TRUE) &&
+		(checkunusedusername($username) == TRUE) &&
 		(checkpasswordmatches($password, $c_password) == TRUE)
 		)
 	{
 		mysqli_query($conn, $insertUserToDatabase);
 		setcookie("PHPSESSION", $username, 0, "/");
+		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/c_profile.html");
+	} else {
+		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/Login.html");
 	}
 
 	mysqli_close($conn);
-	header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/c_profile.html");
 	die();
 ?>

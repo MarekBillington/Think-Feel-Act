@@ -2,11 +2,11 @@
 
 	$username = $_GET['username'];
 	$password = $_GET['password'];
-	$rememberme = $_GET['remember'];
+	$rememberme =@$_GET['remember'];
 
 	require_once ("settings.php");
 							
-	$conn =@mysqli_connect($host, $user, $pass, $dbnm);
+	$conn = mysqli_connect($host, $user, $pass, $dbnm);
 	
 	if ($conn->connect_error) {
 		die("The database is unavailable at the moment." . $conn->connect_error);
@@ -16,7 +16,7 @@
 
 	$loginQuery = "SELECT * FROM registered_users WHERE username = '".$username."' AND password = '".$password."'";
 
-	$loginSearch =@mysqli_query($conn, $loginQuery);
+	$loginSearch = mysqli_query($conn, $loginQuery);
 
 	$row = mysqli_fetch_array($loginSearch);
 
