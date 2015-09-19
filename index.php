@@ -41,7 +41,7 @@
             <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active">
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li class="dropdown" id="mentalexplore">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Practical Explore <i class="fa et-down fa-angle-down"></i></a>
@@ -64,7 +64,7 @@
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="Login.html">Login<br></a>
+                        <a href="Login.php">Login<br></a>
                     </li>
                 </ul>
             </div>

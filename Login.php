@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -25,12 +26,13 @@
             <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active">
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li class="dropdown" id="mentalexplore">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Practical Explore <i class="fa et-down fa-angle-down"></i></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
+                                <!--GET ONTO OTHER LINKS-->
                                 <a href="#">Questionnaire</a>
                             </li>
                             <li>
@@ -48,7 +50,7 @@
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="Login.html">Login<br></a>
+                        <a href="Login.php">Login<br></a>
                     </li>
                 </ul>
             </div>
@@ -73,7 +75,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                                    <form id="login-form" action="php/login.php" method="get" role="form" style="display: block;">
                                         <div class="form-group">
                                             <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                                         </div>
@@ -101,7 +103,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+                                    <form id="register-form" action="php/register.php" method="post" role="form" style="display: none;">
                                         <div class="form-group">
                                             <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                                         </div>
