@@ -25,7 +25,7 @@
 		(is_null($row['password']))
 		)
 	{	
-		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/Login.html");
+		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/Login.php");
 	} else {
 		if($rememberme == "on")
 		{
@@ -33,7 +33,7 @@
 			setcookie("USER_REM", $username, time() + (86400 * 30), "/");
 		}
 		setcookie("PHPSESSION", $username, 0, "/");
-		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/c_profile.html");
+		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/c_profile.php");
 	}
 
 	mysqli_close($conn);

@@ -66,9 +66,9 @@
 	{
 		mysqli_query($conn, $insertUserToDatabase);
 		setcookie("PHPSESSION", $username, 0, "/");
-		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/c_profile.html");
+		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/c_profile.php");
 	} else {
-		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/Login.html");
+		header("Location: http://localhost/Think-Feel-Act/Think-Feel-Act/Login.php");
 	}
 
 	mysqli_close($conn);
