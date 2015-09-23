@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<?php
+    
+    if(isset$_SESSION['user'])
+    {
+        //leave session the way it is
+    } else {
+        //set the session variable
+    }
+
+    //use session variable to gather information about counselors profile
+
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -18,7 +30,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Brand<br></a>
+                            <a class="navbar-brand" href="c_profile.php">Brand<br></a>
                         </div>
                         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                             <ul class="nav navbar-nav navbar-right">
