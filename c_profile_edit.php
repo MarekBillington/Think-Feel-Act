@@ -14,6 +14,7 @@
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="javascript/edit_script.js"></script>
     </head>
     <body>
         <div class="navbar navbar-default navbar-static-top">
@@ -91,10 +92,13 @@
                     <div class="col-md-4"> 
                         <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="center-block img-circle img-responsive"> 
                         <h3 class="text-center">John Doe</h3> 
-                        <p class="text-center">Developer</p>
                     </div>
                     <div class="col-md-8">
-                        <p>poop</p>
+                        <h3>Location</h3>
+                        <p>Enter your area here!</p>
+                        <br>
+                        <h3>Biography</h3>
+                        <p>Talk About yourself here!</p>
                     </div>
                 </div>
             </div>
@@ -102,8 +106,8 @@
         <div class="section section-info">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
-                        <p>Hi</p>
+                    <div class="col-md-6">
+                        <h3 class="text-center">Expertise</h3>
                     </div>
                     <div class="col-md-4">
                         <p> HI HI </p>
@@ -114,10 +118,10 @@
         <div class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <p>Hi Ho</p>
+                    <div class="col-md-6">
+                        <h3 class="text-center">Qualifications</h3>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-4">
                         <p> Hi Ho HI </p>
                     </div>
                 </div>

@@ -1,4 +1,12 @@
+
 <!DOCTYPE html>
+<?php
+    if(isset($_COOKIE['PHPSESSION']))
+    {
+        $username = $_COOKIE['PHPSESSION'];
+    }
+    
+?>
 <html>
 
 <head>
@@ -36,7 +44,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand<br></a>
+                <?php
+                    if(isset($username))
+                    {
+                        echo"<h4><a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>$username<i class='fa et-down fa-angle-down'></i></a>
+                            <ul class='dropdown-menu' role='menu'>
+                                <li>
+                                    <a href='c_profile.php'>Profile</a>
+                                </li>
+                                <li>
+                                    <a href='#'>Forms</a>
+                                </li>
+                                <li>
+                                    <a href='#'>Requests</a>
+                                </li>
+                            </ul></h4>";
+                    } else {
+                        echo "<a class='navbar-brand' href='#'>Think, Feel, Act<br></a>";
+                    }
+                ?>
             </div>
             <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -64,7 +90,15 @@
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="Login.php">Login<br></a>
+                        <?php
+                            if(isset($username))
+                            {
+                                echo "<a href='php/logout.php'>Log Out</a>";
+                                
+                            } else {
+                                echo '<a href="Login.php">Login<br></a>';
+                            }
+                        ?>
                     </li>
                 </ul>
             </div>
